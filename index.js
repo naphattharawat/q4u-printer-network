@@ -152,7 +152,7 @@ function start() {
 async function printQueue(queue, printerIp) {
     try {
         const device = new escpos.Network(printerIp);
-        if (device.device.connecting) {
+        // if (device.device.connecting) {
             const printer = new escpos.Printer(device);
             if (queue) {
                 const printSmallQueue = queue.printSmallQueue || 'N';
@@ -239,9 +239,9 @@ async function printQueue(queue, printerIp) {
                 log(`[PRINT] Queue number ${queueNumber} not found.`, false)
             }
 
-        } else {
-            log(`[PRINT] Connect printer failed (${printerIp}).`, false);
-        }
+        // } else {
+        //     log(`[PRINT] Connect printer failed (${printerIp}).`, false);
+        // }
     } catch (error) {
         log(`[PRINT] Error.`, false)
     }
